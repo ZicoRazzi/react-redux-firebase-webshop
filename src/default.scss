@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantata+One&display=swap');
+
+html {
+  font-size: 10px;
+}
+html,
+body {
+  height: 100%;
+  font-family: 'Cantata One', serif;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+a,
+a:hover {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+li {
+  list-style-type: none;
+}
+body {
+  // font-family: 'Open Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.App {
+  max-width: 1450px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+// .fullHeight {
+//   height: 100%;
+// }

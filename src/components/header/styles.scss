@@ -1,0 +1,46 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 10.5rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+.header:hover {
+  background-color: #fff;
+}
+
+.nav_menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 20px 0;
+  &-list {
+    display: inline-block;
+    margin-left: 40px;
+  }
+  &-link,
+  span {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 1.4rem;
+  }
+  span {
+    position: absolute;
+    right: 50px;
+    bottom: 20px;
+  }
+}
+.logo {
+  margin-top: 20px;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  &-link {
+    color: #000;
+  }
+}

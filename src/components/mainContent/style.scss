@@ -1,0 +1,25 @@
+.main_image {
+  margin-top: 150px;
+  width: 100%;
+  height: 700px;
+  background: no-repeat center center;
+  background-size: cover;
+}
+.link_image {
+  width: 100wh;
+  height: 500px;
+  background: no-repeat center center;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link_beanies {
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  font-size: 2rem;
+}

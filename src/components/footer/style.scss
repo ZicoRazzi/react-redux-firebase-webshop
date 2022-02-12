@@ -1,0 +1,54 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 20px;
+  min-height: 300px;
+  width: 100%;
+  background-color: rgb(236, 235, 235);
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: #444;
+  }
+  &-list {
+    margin-top: 10px;
+  }
+  &-link {
+    color: #444;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+  }
+}
+.newslet_form {
+  width: 300px;
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid #444;
+  margin-top: 30px;
+  &-input {
+    width: 200px;
+    height: 40px;
+    padding-left: 16px;
+    border: none;
+  }
+  &-btn {
+    height: 30px;
+    padding: 6px 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(116, 113, 113);
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+.payment_options {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  color: rgb(116, 113, 113);
+  font-size: 3rem;
+}
