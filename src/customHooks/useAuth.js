@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router';
+// import { WithRouter } from './../components/withRouter';
+import { useNavigate } from 'react-router';
 
 const mapState = ({ user }) => ({
   currentUser: user.currentUser,
@@ -8,10 +9,11 @@ const mapState = ({ user }) => ({
 
 const useAuth = (props) => {
   const { currentUser } = useSelector(mapState);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!currentUser) {
-      props.navigate('/account');
+      navigate('/account');
     }
   }, [currentUser]);
 
