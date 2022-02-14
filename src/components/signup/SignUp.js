@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { WithRouter } from './../withRouter/WithRouter';
+
 import { auth, handleUserProfile } from '../../firebase/utils';
 import FormInput from '../forms/form_input/FormInput';
 import Button from '../forms/Button/Button';
@@ -37,6 +39,7 @@ const SignUp = (props) => {
 
       await handleUserProfile(user, { displayName });
       reset();
+      props.navigate('/');
     } catch (err) {
       //console.log(err)
     }
@@ -92,4 +95,4 @@ const SignUp = (props) => {
   );
 };
 
-export default SignUp;
+export default WithRouter(SignUp);
