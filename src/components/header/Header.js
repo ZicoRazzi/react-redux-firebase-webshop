@@ -1,17 +1,21 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-// import { connect } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
+import { signOutUserStart } from '../../redux/user/user.action';
 import './styles.scss';
 import { Link } from 'react-router-dom';
-import { auth } from './../../firebase/utils';
 
 const mapState = ({ user }) => ({
   currentUser: user.currentUser,
 });
 
 const Header = (props) => {
+  const dispatch = useDispatch();
   const { currentUser } = useSelector(mapState);
-  // const { currentUser } = props;
+
+  const signOut = () => {
+    dispatch(signOutUserStart());
+  };
+
   return (
     <div>
       <header className="header">
@@ -69,13 +73,7 @@ const Header = (props) => {
                 </Link>
               </li>
               <li>
-                <span
-                  onClick={() => {
-                    auth.signOut();
-                  }}
-                >
-                  LogOut
-                </span>
+                <span onClick={() => signOut()}>LogOut</span>
               </li>
             </ul>
           )}
@@ -148,9 +146,4 @@ Header.defaultProps = {
   currentUser: null,
 };
 
-// const mapStateToProps = ({ user }) => ({
-//   currentUser: user.currentUser,
-// });
-
-// export default connect(mapStateToProps, null)(Header);
 export default Header;
