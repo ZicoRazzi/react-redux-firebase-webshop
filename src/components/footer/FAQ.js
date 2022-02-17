@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const FAQ = () => {
   return (
-    <section>
+    <section className="faq-section">
       <h2>FAQ</h2>
       <ul>
         <li className="footer-list">

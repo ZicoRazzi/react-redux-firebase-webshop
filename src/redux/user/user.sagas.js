@@ -1,4 +1,4 @@
-import { takeLatest, call, all, put, take } from '@redux-saga/core/effects';
+import { takeLatest, call, all, put } from '@redux-saga/core/effects';
 import userTypes from './user.types';
 import {
   auth,

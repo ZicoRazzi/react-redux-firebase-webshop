@@ -52,3 +52,17 @@
   color: rgb(116, 113, 113);
   font-size: 3rem;
 }
+
+@media screen and (max-width: 440px) {
+  .about-section,
+  .faq-section {
+    display: none;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .social-section {
+    text-align: center;
+  }
+}

@@ -1,6 +1,6 @@
 .header {
   position: fixed;
-  top: 0;
+  top: 40px;
   left: 0;
   width: 100%;
   min-height: 10.5rem;
@@ -8,6 +8,9 @@
   cursor: pointer;
   background: transparent;
   transition: all 0.3s ease;
+  .hamburger {
+    display: none;
+  }
 }
 .header:hover {
   background-color: #fff;
@@ -36,11 +39,42 @@
   }
 }
 .logo {
-  margin-top: 20px;
+  margin-top: 50px;
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
   &-link {
     color: #000;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    top: 0;
+    .hamburger {
+      display: block;
+    }
+  }
+  .nav_menu {
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    width: 100vw;
+    height: 40%;
+    right: 0;
+    top: 10px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 10px;
+    &-list {
+      margin: 10px;
+      text-align: left;
+    }
+    &-link,
+    span {
+      color: #fff;
+    }
+    span {
+      left: 20px;
+      top: 170px;
+    }
   }
 }

@@ -29,7 +29,6 @@ li {
   list-style-type: none;
 }
 body {
-  // font-family: 'Open Sans', sans-serif;
   font-size: 1.8rem;
   font-weight: 400;
   line-height: 1;
@@ -43,3 +42,8 @@ body {
 // .fullHeight {
 //   height: 100%;
 // }
+@media screen and (max-width: 440px) {
+  .App {
+    max-width: 100vw;
+  }
+}

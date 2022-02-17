@@ -6,8 +6,11 @@ import { useDispatch } from 'react-redux';
 
 import './default.scss';
 
+//components
+import AdminToolbar from './components/adminToolbar/AdminToolbar';
 //hoc
 import WithAuth from './hoc/WithAuth';
+import WithAdminAuth from './hoc/WithAdminAuth';
 
 //pages
 import Homepage from './pages/Homepage/Homepage';
@@ -15,9 +18,12 @@ import Registration from './pages/Registration/Registration';
 import Account from './pages/Account/Account';
 import Recovery from './pages/Recovery/Recovery';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Admin from './pages/Admin/Admin';
 
 //layouts
 import MainLayout from './layouts/MainLayout';
+import DashboardLayout from './layouts/DashboardLayout';
+import AdminLayout from './layouts/AdminLayout';
 
 const App = (props) => {
   const dispatch = useDispatch();
@@ -28,6 +34,7 @@ const App = (props) => {
 
   return (
     <div className="App">
+      <AdminToolbar />
       <Routes>
         <Route
           path="/"
@@ -65,10 +72,20 @@ const App = (props) => {
           path="/dashboard"
           element={
             <WithAuth>
-              <MainLayout>
+              <DashboardLayout>
                 <Dashboard />
-              </MainLayout>
+              </DashboardLayout>
             </WithAuth>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <WithAdminAuth>
+              <AdminLayout>
+                <Admin />
+              </AdminLayout>
+            </WithAdminAuth>
           }
         />
       </Routes>

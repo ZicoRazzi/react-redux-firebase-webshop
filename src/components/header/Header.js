@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signOutUserStart } from '../../redux/user/user.action';
 import './styles.scss';
 import { Link } from 'react-router-dom';
+import Hamburger from 'hamburger-react';
 
 const mapState = ({ user }) => ({
   currentUser: user.currentUser,
@@ -24,6 +25,21 @@ const Header = (props) => {
             Le Bonnet
           </Link>
         </div>
+        <div className="hamburger">
+          <Hamburger
+            direction="left"
+            size={22}
+            duration={0.4}
+            // onToggle={(toggled) => {
+            //   if (toogled) {
+
+            //   } else {
+
+            //   }
+            // }}
+          />
+        </div>
+
         <div className="nav_menu">
           {currentUser && (
             <ul>

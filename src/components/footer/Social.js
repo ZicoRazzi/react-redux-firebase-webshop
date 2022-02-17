@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Social = () => {
   return (
-    <section>
+    <section className="social-section">
       <h2>Social</h2>
       <ul>
         <li className="footer-list">
