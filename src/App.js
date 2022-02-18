@@ -14,6 +14,8 @@ import WithAdminAuth from './hoc/WithAdminAuth';
 
 //pages
 import Homepage from './pages/Homepage/Homepage';
+import Search from './pages/Search/Search';
+import Beanies from './pages/Beanies/Beanies';
 import Registration from './pages/Registration/Registration';
 import Account from './pages/Account/Account';
 import Recovery from './pages/Recovery/Recovery';
@@ -41,6 +43,32 @@ const App = (props) => {
           element={
             <MainLayout>
               <Homepage />
+            </MainLayout>
+          }
+        />
+        <Route
+          exact
+          path="/search"
+          element={
+            <MainLayout>
+              <Search />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/search/:filterType"
+          element={
+            <MainLayout>
+              <Search />
+            </MainLayout>
+          }
+        />
+        <Route
+          // path="/store/:category"
+          path="/beanies"
+          element={
+            <MainLayout>
+              <Beanies />
             </MainLayout>
           }
         />

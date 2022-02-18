@@ -9,7 +9,13 @@ import { setProducts, fetchProductsStart } from './products.action';
 import productsTypes from './products.types';
 
 export function* addProduct({
-  payload: { productCategory, productName, productThumbnail, productPrice },
+  payload: {
+    productCategory,
+    productName,
+    productThumbnail,
+    productPrice,
+    productDesc,
+  },
 }) {
   try {
     const timestamp = new Date();
@@ -18,6 +24,7 @@ export function* addProduct({
       productName,
       productThumbnail,
       productPrice,
+      productDesc,
       productAdminUSerUID: auth.currentUser.uid,
       createdDate: timestamp,
     });
@@ -31,9 +38,9 @@ export function* onAddProductStart() {
   yield takeLatest(productsTypes.ADD_NEW_PRODUCT_START, addProduct);
 }
 
-export function* fetchProducts() {
+export function* fetchProducts({ payload: { filterType } }) {
   try {
-    const products = yield handleFetchProducts();
+    const products = yield handleFetchProducts({ filterType });
     yield put(setProducts(products));
   } catch (err) {
     //console.log(err)

@@ -19,7 +19,7 @@
 .nav_menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 30px;
   padding: 20px 0;
   &-list {
@@ -31,11 +31,6 @@
     text-transform: uppercase;
     color: #000;
     font-size: 1.4rem;
-  }
-  span {
-    position: absolute;
-    right: 50px;
-    bottom: 20px;
   }
 }
 .logo {

@@ -22,6 +22,7 @@ const Admin = (props) => {
   const [productCategory, setProductCategory] = useState('');
   const [productName, setProductName] = useState('');
   const [productThumbnail, setProductThumbnail] = useState('');
+  const [productDesc, setProductDesc] = useState('');
   const [productPrice, setProductPrice] = useState(0);
 
   useEffect(() => {
@@ -40,6 +41,7 @@ const Admin = (props) => {
     setProductCategory('');
     setProductName('');
     setProductThumbnail('');
+    setProductDesc('');
     setProductPrice(0);
   };
 
@@ -51,6 +53,7 @@ const Admin = (props) => {
         productCategory,
         productName,
         productThumbnail,
+        productDesc,
         productPrice,
       })
     );
@@ -110,6 +113,13 @@ const Admin = (props) => {
             />
 
             <FormInput
+              label="Description"
+              type="text"
+              value={productDesc}
+              handleChange={(e) => setProductDesc(e.target.value)}
+            />
+
+            <FormInput
               label="Price"
               type="number"
               min="0.00"
@@ -139,6 +149,7 @@ const Admin = (props) => {
                       const {
                         productName,
                         productThumbnail,
+                        productDesc,
                         productPrice,
                         documentID,
                       } = product;
@@ -149,6 +160,7 @@ const Admin = (props) => {
                             <img src={productThumbnail} alt="product-image" />
                           </td>
                           <td>{productName}</td>
+                          <td>{productDesc}</td>
                           <td>&euro;{productPrice}</td>
                           <td>
                             <Button
