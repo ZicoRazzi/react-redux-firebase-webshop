@@ -9,6 +9,7 @@ import Modal from './../../components/modal/Modal';
 import FormInput from './../../components/forms/form_input/FormInput';
 import FormSelect from './../../components/forms/form_select/FormSelect';
 import Button from './../../components/forms/Button/Button';
+import LoadMore from '../../components/loadMore/LoadMore';
 import './styles.scss';
 
 const mapState = ({ productsData }) => ({
@@ -24,6 +25,8 @@ const Admin = (props) => {
   const [productThumbnail, setProductThumbnail] = useState('');
   const [productDesc, setProductDesc] = useState('');
   const [productPrice, setProductPrice] = useState(0);
+
+  const { data, queryDoc, isLastPage } = products;
 
   useEffect(() => {
     dispatch(fetchProductsStart());
@@ -58,6 +61,19 @@ const Admin = (props) => {
       })
     );
     resetForm();
+  };
+
+  const handleLoadMore = () => {
+    dispatch(
+      fetchProductsStart({
+        startAfterDoc: queryDoc,
+        persistProducts: data,
+      })
+    );
+  };
+
+  const configLoadMore = {
+    onLoadMoreEvt: handleLoadMore,
   };
 
   return (
@@ -145,37 +161,46 @@ const Admin = (props) => {
               <td>
                 <table border="0" cellPadding="10" cellSpacing="0">
                   <tbody className="product-content">
-                    {products.map((product, index) => {
-                      const {
-                        productName,
-                        productThumbnail,
-                        productDesc,
-                        productPrice,
-                        documentID,
-                      } = product;
+                    {Array.isArray(data) &&
+                      data.length > 0 &&
+                      data.map((product, index) => {
+                        const {
+                          productName,
+                          productThumbnail,
+                          productDesc,
+                          productPrice,
+                          documentID,
+                        } = product;
 
-                      return (
-                        <tr className="product-container">
-                          <td>
-                            <img src={productThumbnail} alt="product-image" />
-                          </td>
-                          <td>{productName}</td>
-                          <td>{productDesc}</td>
-                          <td>&euro;{productPrice}</td>
-                          <td>
-                            <Button
-                              onClick={() =>
-                                dispatch(deleteProductStart(documentID))
-                              }
-                            >
-                              Delete
-                            </Button>
-                          </td>
-                        </tr>
-                      );
-                    })}
+                        return (
+                          <tr className="product-container">
+                            <td>
+                              <img src={productThumbnail} alt="product-image" />
+                            </td>
+                            <td>{productName}</td>
+                            <td>{productDesc}</td>
+                            <td>&euro;{productPrice}</td>
+                            <td>
+                              <Button
+                                onClick={() =>
+                                  dispatch(deleteProductStart(documentID))
+                                }
+                              >
+                                Delete
+                              </Button>
+                            </td>
+                          </tr>
+                        );
+                      })}
                   </tbody>
                 </table>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <td>
+                  <tr> {!isLastPage && <LoadMore {...configLoadMore} />}</tr>
+                </td>
               </td>
             </tr>
           </tbody>

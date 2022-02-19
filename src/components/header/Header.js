@@ -92,7 +92,7 @@ const Header = (props) => {
           {!currentUser && (
             <ul>
               <li className="nav_menu-list">
-                <Link className="nav_menu-link" to="/">
+                <Link className="nav_menu-link" to="/beanies">
                   Beanies
                 </Link>
               </li>

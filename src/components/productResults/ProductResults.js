@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchProductsStart } from './../../redux/products/products.action';
 import FormSelect from './../forms/form_select/FormSelect';
+import LoadMore from '../loadMore/LoadMore';
 import Product from './Product';
 
 import './styles.scss';
@@ -17,6 +18,8 @@ const ProductResults = ({}) => {
   const { filterType } = useParams();
   const { products } = useSelector(mapState);
 
+  const { data, queryDoc, isLastPage } = products;
+
   useEffect(() => {
     dispatch(fetchProductsStart({ filterType }));
   }, [filterType]);
@@ -26,9 +29,9 @@ const ProductResults = ({}) => {
     navigate(`/search/${nextFilter}`);
   };
 
-  if (!Array.isArray(products)) return null;
+  if (!Array.isArray(data)) return null;
 
-  if (products.length < 1) {
+  if (data.length < 1) {
     return (
       <div className="products">
         <p>No search results</p>
@@ -63,40 +66,58 @@ const ProductResults = ({}) => {
     handleChange: handleFilter,
   };
 
+  const handleLoadMore = () => {
+    dispatch(
+      fetchProductsStart({
+        filterType,
+        startAfterDoc: queryDoc,
+        persistProducts: data,
+      })
+    );
+  };
+
+  const configLoadMore = {
+    onLoadMoreEvt: handleLoadMore,
+  };
+
   return (
     <div className="products">
       <FormSelect {...configFilters} />
 
-      {products.map((product, pos) => {
-        const {
-          productCategory,
-          productThumbnail,
-          productName,
-          productDesc,
-          productPrice,
-        } = product;
-        if (
-          !productThumbnail ||
-          !productName ||
-          !productDesc ||
-          typeof productPrice === 'undefined'
-        )
-          return null;
+      <div className="product-results">
+        {data.map((product, pos) => {
+          const {
+            productCategory,
+            productThumbnail,
+            productName,
+            productDesc,
+            productPrice,
+          } = product;
+          if (
+            !productThumbnail ||
+            !productName ||
+            !productDesc ||
+            typeof productPrice === 'undefined'
+          )
+            return null;
 
-        //if (filter && productCategory !== filter) {
-        //  console.log(filter)
-        //  console.log("test")
-        //}
+          //if (filter && productCategory !== filter) {
+          //  console.log(filter)
+          //  console.log("test")
+          //}
 
-        const configProduct = {
-          productThumbnail,
-          productName,
-          productDesc,
-          productPrice,
-        };
+          const configProduct = {
+            productThumbnail,
+            productName,
+            productDesc,
+            productPrice,
+          };
 
-        return <Product {...configProduct} />;
-      })}
+          return <Product {...configProduct} />;
+        })}
+      </div>
+
+      {!isLastPage && <LoadMore {...configLoadMore} />}
     </div>
   );
 };
