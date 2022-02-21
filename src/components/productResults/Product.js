@@ -1,16 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from './../forms/Button/Button';
 
 const Product = ({
+  documentID,
   productThumbnail,
   productName,
-  productDesc,
+  // productDesc,
   productPrice,
 }) => {
   if (
+    !documentID ||
     !productThumbnail ||
     !productName ||
-    !productDesc ||
+    // !productDesc ||
     typeof productPrice === 'undefined'
   )
     return null;
@@ -21,17 +24,21 @@ const Product = ({
   return (
     <div className="product">
       <div className="thumb">
-        <img src={productThumbnail} alt={productName} />
+        <Link to={`/product/${documentID}`}>
+          <img src={productThumbnail} alt={productName} />
+        </Link>
       </div>
 
       <div className="details">
         <ul>
           <li>
-            <p className="product-name">{productName}</p>
+            <Link to={`/product/${documentID}`}>
+              <p className="product-name">{productName}</p>
+            </Link>
           </li>
-          <li>
+          {/* <li>
             <p className="product-desc">{productDesc}</p>
-          </li>
+          </li> */}
           <li>
             <span className="product-price">&euro;{productPrice}</span>
           </li>

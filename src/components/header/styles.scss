@@ -1,10 +1,10 @@
 .header {
   position: fixed;
-  top: 40px;
+  top: 0;
   left: 0;
   width: 100%;
   min-height: 10.5rem;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   background: transparent;
   transition: all 0.3s ease;

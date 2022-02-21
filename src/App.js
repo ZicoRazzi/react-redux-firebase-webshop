@@ -15,6 +15,7 @@ import WithAdminAuth from './hoc/WithAdminAuth';
 //pages
 import Homepage from './pages/Homepage/Homepage';
 import Search from './pages/Search/Search';
+import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Beanies from './pages/Beanies/Beanies';
 import Registration from './pages/Registration/Registration';
 import Account from './pages/Account/Account';
@@ -36,7 +37,6 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <AdminToolbar />
       <Routes>
         <Route
           path="/"
@@ -64,7 +64,14 @@ const App = (props) => {
           }
         />
         <Route
-          // path="/store/:category"
+          path="/product/:productID"
+          element={
+            <MainLayout>
+              <ProductDetails />
+            </MainLayout>
+          }
+        />
+        <Route
           path="/beanies"
           element={
             <MainLayout>
@@ -117,6 +124,7 @@ const App = (props) => {
           }
         />
       </Routes>
+      <AdminToolbar />
     </div>
   );
 };

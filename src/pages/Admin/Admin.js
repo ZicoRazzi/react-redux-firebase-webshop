@@ -10,6 +10,7 @@ import FormInput from './../../components/forms/form_input/FormInput';
 import FormSelect from './../../components/forms/form_select/FormSelect';
 import Button from './../../components/forms/Button/Button';
 import LoadMore from '../../components/loadMore/LoadMore';
+import { CKEditor } from 'ckeditor4-react';
 import './styles.scss';
 
 const mapState = ({ productsData }) => ({
@@ -128,12 +129,12 @@ const Admin = (props) => {
               handleChange={(e) => setProductThumbnail(e.target.value)}
             />
 
-            <FormInput
+            {/* <FormInput
               label="Description"
               type="text"
               value={productDesc}
               handleChange={(e) => setProductDesc(e.target.value)}
-            />
+            /> */}
 
             <FormInput
               label="Price"
@@ -144,6 +145,9 @@ const Admin = (props) => {
               value={productPrice}
               handleChange={(e) => setProductPrice(e.target.value)}
             />
+            <CKEditor onChange={(e) => setProductDesc(e.editor.getData())} />
+
+            <br />
 
             <Button type="submit">Add product</Button>
           </form>

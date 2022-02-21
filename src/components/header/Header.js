@@ -77,11 +77,13 @@ const Header = (props) => {
                   Search
                 </Link>
               </li>
+
               <li className="nav_menu-list">
                 <Link className="nav_menu-link" to="/">
                   Cart (0)
                 </Link>
               </li>
+
               <li className="nav_menu-list">
                 <span className="nav_menu-link" onClick={() => signOut()}>
                   LogOut

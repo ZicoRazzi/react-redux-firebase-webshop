@@ -3,10 +3,6 @@
   width: 100%;
 
   .product-results {
-    // width: 100%;
-    // display: grid;
-    // grid-template-columns: repeat(4, auto);
-    //   grid-template-rows: repeat(4, auto);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -14,7 +10,6 @@
   }
 }
 .product {
-  border: 1px solid #000;
   width: 23%;
   height: 100%;
   .thumb {
@@ -31,6 +26,12 @@
     .product-name {
       font-size: 2rem;
       margin-bottom: 10px;
+    }
+    a {
+      color: #444;
+      &:hover {
+        color: orange;
+      }
     }
     .product-desc {
       line-height: 1.2;
