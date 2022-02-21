@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchProductStart,
   setProduct,
 } from '../../redux/products/products.action';
+import { addProduct } from '../../redux/cart/cart.action';
 import Button from '../forms/Button/Button';
 
 import './styles.scss';
@@ -17,6 +18,7 @@ const ProductCard = ({}) => {
   const { productID } = useParams();
   const { product } = useSelector(mapState);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { productThumbnail, productName, productPrice, productDesc } = product;
 
@@ -30,6 +32,12 @@ const ProductCard = ({}) => {
 
   const configAddYoCartBtn = {
     type: 'button',
+  };
+
+  const handleAddToCart = (product) => {
+    if (!product) return;
+    dispatch(addProduct(product));
+    navigate('/cart');
   };
 
   return (
@@ -58,7 +66,12 @@ const ProductCard = ({}) => {
           </li>
           <li>
             <div className="add-to-cart">
-              <Button {...configAddYoCartBtn}>Add to cart</Button>
+              <Button
+                {...configAddYoCartBtn}
+                onClick={() => handleAddToCart(product)}
+              >
+                Add to cart
+              </Button>
             </div>
           </li>
         </ul>

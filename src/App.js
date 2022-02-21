@@ -16,6 +16,7 @@ import WithAdminAuth from './hoc/WithAdminAuth';
 import Homepage from './pages/Homepage/Homepage';
 import Search from './pages/Search/Search';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import Cart from './pages/Cart/Cart';
 import Beanies from './pages/Beanies/Beanies';
 import Registration from './pages/Registration/Registration';
 import Account from './pages/Account/Account';
@@ -68,6 +69,14 @@ const App = (props) => {
           element={
             <MainLayout>
               <ProductDetails />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <MainLayout>
+              <Cart />
             </MainLayout>
           }
         />
