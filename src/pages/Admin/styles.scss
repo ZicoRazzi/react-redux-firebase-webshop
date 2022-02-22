@@ -1,6 +1,6 @@
 .admin {
   min-height: 100vh;
-  max-width: 100%;
+  width: 100%;
   margin-top: 60px;
   padding: 20px 10px 20px 0px;
 
@@ -9,50 +9,30 @@
     width: 100%;
     padding: 0;
     margin: 0px auto;
-
-    ul,
-    li {
-      margin: 0;
-      padding: 0;
-      list-style-type: none;
-    }
-
-    ul {
-      li {
-        display: inline-block;
-      }
-    }
   }
 }
 
 .manageProducts {
-  .product-content {
-    max-width: 100%;
-
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(4, auto);
-    gap: 20px;
-  }
   h1 {
-    margin: 3.5rem 0;
+    text-align: center;
+    margin-top: 5rem;
   }
+  .product-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+  }
+
   .product-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  table.results {
-    tr {
-      &:nth-child(even) {
-        background-color: #d3d3d3;
-      }
+    gap: 2rem;
+    width: 24.2%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 
-      .thumb {
-        width: rem;
-        margin: 0 auto;
-      }
+    img {
+      width: 100%;
     }
   }
 }

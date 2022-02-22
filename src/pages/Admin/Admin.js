@@ -129,13 +129,6 @@ const Admin = (props) => {
               handleChange={(e) => setProductThumbnail(e.target.value)}
             />
 
-            {/* <FormInput
-              label="Description"
-              type="text"
-              value={productDesc}
-              handleChange={(e) => setProductDesc(e.target.value)}
-            /> */}
-
             <FormInput
               label="Price"
               type="number"
@@ -154,61 +147,38 @@ const Admin = (props) => {
         </div>
       </Modal>
       <div className="manageProducts">
-        <table>
-          <tbody>
-            <tr>
-              <th>
-                <h1>Manage Products</h1>
-              </th>
-            </tr>
-            <tr>
-              <td>
-                <table border="0" cellPadding="10" cellSpacing="0">
-                  <tbody className="product-content">
-                    {Array.isArray(data) &&
-                      data.length > 0 &&
-                      data.map((product, index) => {
-                        const {
-                          productName,
-                          productThumbnail,
-                          productDesc,
-                          productPrice,
-                          documentID,
-                        } = product;
+        <h1>Manage Products</h1>
+        <div className="product-content">
+          {Array.isArray(data) &&
+            data.length > 0 &&
+            data.map((product, index) => {
+              const {
+                productName,
+                productThumbnail,
+                productPrice,
+                documentID,
+              } = product;
 
-                        return (
-                          <tr className="product-container">
-                            <td>
-                              <img src={productThumbnail} alt="product-image" />
-                            </td>
-                            <td>{productName}</td>
-                            <td>{productDesc}</td>
-                            <td>&euro;{productPrice}</td>
-                            <td>
-                              <Button
-                                onClick={() =>
-                                  dispatch(deleteProductStart(documentID))
-                                }
-                              >
-                                Delete
-                              </Button>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <td>
-                  <tr> {!isLastPage && <LoadMore {...configLoadMore} />}</tr>
-                </td>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+              return (
+                <div className="product-container">
+                  <div className="product-image">
+                    <img src={productThumbnail} alt="product-image" />
+                  </div>
+                  <span className="product-name">{productName}</span>
+                  <span className="product-price">&euro;{productPrice}</span>
+                  <div className="delete-btn">
+                    <Button
+                      onClick={() => dispatch(deleteProductStart(documentID))}
+                    >
+                      Delete
+                    </Button>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+
+        <div> {!isLastPage && <LoadMore {...configLoadMore} />}</div>
       </div>
     </div>
   );
