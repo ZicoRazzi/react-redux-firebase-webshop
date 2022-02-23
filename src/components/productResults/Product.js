@@ -12,7 +12,6 @@ const Product = (product) => {
     !documentID ||
     !productThumbnail ||
     !productName ||
-    // !productDesc ||
     typeof productPrice === 'undefined'
   )
     return null;
@@ -42,14 +41,11 @@ const Product = (product) => {
               <p className="product-name">{productName}</p>
             </Link>
           </li>
-          {/* <li>
-            <p className="product-desc">{productDesc}</p>
-          </li> */}
           <li>
             <span className="product-price">&euro;{productPrice}</span>
           </li>
           <li>
-            <div className="add-to-cart">
+            <div className="add-to-cart-btn">
               <Button
                 {...configAddToCartBtn}
                 onClick={() => handleAddToCart(product)}

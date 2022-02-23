@@ -19,7 +19,7 @@
     font-size: 1.2rem;
   }
 }
-.newslet_form {
+.newsletter_form {
   width: 300px;
   height: 50px;
   background-color: #fff;
@@ -53,6 +53,31 @@
   font-size: 3rem;
 }
 
+@media screen and (max-width: 767px) {
+  .about-section,
+  .faq-section,
+  .newsletter-section,
+  .social-section {
+    width: 48%;
+    padding: 2rem;
+  }
+  .footer {
+    flex-wrap: wrap;
+    gap: none;
+    padding: 3rem 1rem;
+  }
+  .newsletter_form {
+    width: 240px;
+    height: 50px;
+
+    &-input {
+      width: 140px;
+    }
+    &-btn {
+      width: 80px;
+    }
+  }
+}
 @media screen and (max-width: 440px) {
   .about-section,
   .faq-section {
@@ -60,9 +85,14 @@
   }
   .footer {
     flex-direction: column;
-    gap: 20px;
+    gap: 2rem;
   }
-  .social-section {
+  .social-section,
+  .newsletter-section {
+    width: 100%;
     text-align: center;
+    h2 {
+      line-height: 1.4px;
+    }
   }
 }

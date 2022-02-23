@@ -1,21 +1,31 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { fetchProductsStart } from './../../redux/products/products.action';
 import FormSelect from './../forms/form_select/FormSelect';
 import LoadMore from '../loadMore/LoadMore';
 import Product from './Product';
 
 import './styles.scss';
+import BannerImageB from './../../assets/images/beanie-campaign.webp';
+import BannerImageG from './../../assets/images/banner-gloves-fingerless.webp';
+import BannerImageS from './../../assets/images/lebonnet_scarf_campaign.webp';
+import BannerImage from './../../assets/images/lebonnet_giftcard-banner.webp';
 
 const mapState = ({ productsData }) => ({
   products: productsData.products,
 });
 
-const ProductResults = ({}) => {
+const ProductResults = ({
+  filterType,
+  displayFilter = true,
+  bannerImage = true,
+  bannerImageB = true,
+  bannerImageG = true,
+  bannerImageS = true,
+}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { filterType } = useParams();
   const { products } = useSelector(mapState);
 
   const { data, queryDoc, isLastPage } = products;
@@ -58,10 +68,6 @@ const ProductResults = ({}) => {
         name: 'Gloves',
         value: 'gloves',
       },
-      {
-        name: 'Sweaters',
-        value: 'sweaters',
-      },
     ],
     handleChange: handleFilter,
   };
@@ -82,17 +88,46 @@ const ProductResults = ({}) => {
 
   return (
     <div className="products">
-      <FormSelect {...configFilters} />
+      {!bannerImageB && (
+        <div
+          className="banner-image"
+          style={{
+            backgroundImage: `url(${BannerImageB})`,
+          }}
+        ></div>
+      )}
+      {!bannerImageG && (
+        <div
+          className="banner-image"
+          style={{
+            backgroundImage: `url(${BannerImageG})`,
+          }}
+        ></div>
+      )}
+      {!bannerImageS && (
+        <div
+          className="banner-image"
+          style={{
+            backgroundImage: `url(${BannerImageS})`,
+          }}
+        ></div>
+      )}
+
+      {!bannerImage && (
+        <div
+          className="banner-image"
+          style={{
+            backgroundImage: `url(${BannerImage})`,
+          }}
+        ></div>
+      )}
+
+      {!displayFilter && <FormSelect {...configFilters} />}
 
       <div className="product-results">
         {data.map((product, pos) => {
-          const {
-            productCategory,
-            productThumbnail,
-            productName,
-            productDesc,
-            productPrice,
-          } = product;
+          const { productThumbnail, productName, productDesc, productPrice } =
+            product;
           if (
             !productThumbnail ||
             !productName ||
@@ -101,11 +136,6 @@ const ProductResults = ({}) => {
           )
             return null;
 
-          //if (filter && productCategory !== filter) {
-          //  console.log(filter)
-          //  console.log("test")
-          //}
-
           const configProduct = {
             ...product,
           };
@@ -113,8 +143,9 @@ const ProductResults = ({}) => {
           return <Product {...configProduct} />;
         })}
       </div>
-
-      {!isLastPage && <LoadMore {...configLoadMore} />}
+      <div className="load-more-btn">
+        {!isLastPage && <LoadMore {...configLoadMore} />}
+      </div>
     </div>
   );
 };

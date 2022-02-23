@@ -2,6 +2,13 @@
   display: block;
   width: 100%;
 
+  .banner-image {
+    width: 100%;
+    height: 750px;
+    background-size: cover;
+    margin-bottom: 2rem;
+  }
+
   .product-results {
     display: flex;
     flex-wrap: wrap;
@@ -21,7 +28,7 @@
     }
   }
   .details {
-    padding: 20px 20px 20px 20px;
+    padding: 2rem;
 
     .product-name {
       font-size: 2rem;
@@ -41,9 +48,10 @@
     }
     .product-price {
       font-size: 2.2rem;
+      color: #444;
     }
   }
-  .add-to-cart {
+  .add-to-cart-btn {
     margin-top: 2rem;
 
     Button {
@@ -53,6 +61,109 @@
         color: #444;
         background-color: #fff;
         border: 1px solid #444;
+        transition: all 0.4s ease-in-out;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .products {
+    padding-top: 1rem;
+    .banner-image {
+      background-size: cover;
+      width: 100%;
+      height: 400px;
+      margin-bottom: 3rem;
+      background-repeat: no-repeat;
+    }
+    .load-more-btn {
+      // margin-bottom: 1rem;
+
+      Button {
+        width: 100%;
+        height: 3rem;
+        border: 0.7px solid #444;
+      }
+    }
+  }
+  .product {
+    width: 23%;
+    height: 100%;
+    margin-bottom: 2rem;
+    .thumb {
+      img {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 1rem;
+      }
+    }
+    .details {
+      padding: 0.6rem;
+
+      .product-name {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+      }
+
+      .product-price {
+        font-size: 2rem;
+      }
+    }
+    .add-to-cart-btn {
+      margin-top: 1rem;
+
+      Button {
+        width: 100%;
+        height: 2rem;
+        color: #444;
+        background-color: #fff;
+        border: 0.7px solid #444;
+        &:hover {
+          color: #fff;
+          background-color: #444;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .products {
+    .banner-image {
+      background-size: contain;
+      height: 20rem;
+      margin-bottom: 0;
+      background-repeat: no-repeat;
+    }
+    .product-results {
+      margin-top: 1rem;
+    }
+    .load-more-btn {
+      margin-bottom: 1rem;
+    }
+  }
+  .product {
+    width: 46%;
+    height: 100%;
+    .thumb {
+      img {
+        width: 100%;
+        height: 180px;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .details {
+      padding: 0.6rem;
+
+      .product-name {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      .product-price {
+        font-size: 1.4rem;
       }
     }
   }

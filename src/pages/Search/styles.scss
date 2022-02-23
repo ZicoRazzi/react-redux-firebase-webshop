@@ -1,3 +1,17 @@
 .searchPage {
-  margin-top: 250px;
+  margin-top: 20rem;
+  margin-bottom: 5rem;
+}
+@media screen and (max-width: 767px) {
+  .searchPage {
+    margin-top: 10rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .searchPage {
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+  }
 }

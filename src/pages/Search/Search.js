@@ -1,13 +1,19 @@
 import React from 'react';
 import ProductResults from '../../components/productResults/ProductResults';
 import './styles.scss';
+import { useParams } from 'react-router-dom';
 
-const Beanies = ({}) => {
+const Search = ({}) => {
+  const { filterType } = useParams();
   return (
-    <div className="beaniesPage">
-      <ProductResults />
+    <div className="searchPage">
+      <ProductResults
+        displayFilter={false}
+        filterType={filterType}
+        bannerImage={false}
+      />
     </div>
   );
 };
 
-export default Beanies;
+export default Search;

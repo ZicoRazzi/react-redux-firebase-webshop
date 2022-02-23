@@ -8,6 +8,7 @@ import './default.scss';
 
 //components
 import AdminToolbar from './components/adminToolbar/AdminToolbar';
+import ProductResults from './components/productResults/ProductResults';
 //hoc
 import WithAuth from './hoc/WithAuth';
 import WithAdminAuth from './hoc/WithAdminAuth';
@@ -17,7 +18,6 @@ import Homepage from './pages/Homepage/Homepage';
 import Search from './pages/Search/Search';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Cart from './pages/Cart/Cart';
-import Beanies from './pages/Beanies/Beanies';
 import Registration from './pages/Registration/Registration';
 import Account from './pages/Account/Account';
 import Recovery from './pages/Recovery/Recovery';
@@ -84,7 +84,23 @@ const App = (props) => {
           path="/beanies"
           element={
             <MainLayout>
-              <Beanies />
+              <ProductResults filterType="beanies" bannerImageB={false} />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/scarves"
+          element={
+            <MainLayout>
+              <ProductResults filterType="scarves" bannerImageS={false} />
+            </MainLayout>
+          }
+        />
+        <Route
+          path="/gloves"
+          element={
+            <MainLayout>
+              <ProductResults filterType="gloves" bannerImageG={false} />
             </MainLayout>
           }
         />
