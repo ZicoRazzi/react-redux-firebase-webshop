@@ -104,3 +104,13 @@
     }
   }
 }
+@media screen and (max-width: 767px) {
+  .product-card {
+    padding-top: 1rem;
+    .hero {
+      width: 100%;
+      height: 360px;
+      padding: 1rem;
+    }
+  }
+}
