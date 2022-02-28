@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import MainImage from '../../assets/images/campaign_1.jpg';
 import LinkImageB from '../../assets/images/beanies.jpg';
 import LinkImageS from '../../assets/images/scarves_2.jpg';
@@ -24,9 +26,9 @@ const MainContent = (props) => {
               backgroundSize: 'cover',
             }}
           >
-            <a className="link-products" href="/scarves">
+            <Link className="link-products" to="/scarves">
               shop scarves
-            </a>
+            </Link>
           </div>
           <div
             className="link-image"
@@ -34,9 +36,9 @@ const MainContent = (props) => {
               backgroundImage: `url(${LinkImageB})`,
             }}
           >
-            <a className="link-products" href="/beanies">
+            <Link className="link-products" to="/beanies">
               shop beanies
-            </a>
+            </Link>
           </div>
           <div
             className="link-image"
@@ -44,9 +46,9 @@ const MainContent = (props) => {
               backgroundImage: `url(${LinkImageG})`,
             }}
           >
-            <a className="link-products" href="/gloves">
+            <Link className="link-products" to="/gloves">
               shop gloves
-            </a>
+            </Link>
           </div>
         </div>
       </div>
