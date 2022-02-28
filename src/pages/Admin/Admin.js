@@ -79,7 +79,7 @@ const Admin = (props) => {
 
   return (
     <div className="admin">
-      <div className="callToActions">
+      <div className="admin-btn">
         <ul>
           <li>
             <Button onClick={() => toggleModal()}>Add new product</Button>
@@ -98,10 +98,6 @@ const Admin = (props) => {
                 {
                   value: 'beanies',
                   name: 'Beanies',
-                },
-                {
-                  value: 'sweaters',
-                  name: 'Sweaters',
                 },
                 {
                   value: 'gloves',

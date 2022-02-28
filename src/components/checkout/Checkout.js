@@ -27,83 +27,38 @@ const Checkout = ({}) => {
       <h1>Checkout</h1>
       <div className="cart">
         {cartItems.length > 0 ? (
-          <table border="0" cellPadding="0" cellSpacing="0">
-            <tbody>
-              <tr>
-                <td>
-                  <table
-                    className="checkoutHeader"
-                    border="0"
-                    cellPadding="10"
-                    cellSpacing="0"
-                  >
-                    <tbody>
-                      <tr>
-                        <th>Product</th>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Remove</th>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
+          <>
+            {/* <div className="checkoutItems">
+              <ul>
+                <li>Product</li>
+                <li>Description</li>
+                <li>Quantity</li>
+                <li>Price</li>
+                <li>Remove</li>
+              </ul>
+            </div> */}
 
-              <tr>
-                <table border="0" cellPadding="0" cellSpacing="0">
-                  <tbody>
-                    {cartItems.map((item, pos) => {
-                      return (
-                        <tr key={pos}>
-                          <td>
-                            <Item {...item} />
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </tr>
+            <div className="items">
+              {cartItems.map((item, pos) => {
+                return (
+                  <ul key={pos}>
+                    <li>
+                      <Item {...item} />
+                    </li>
+                  </ul>
+                );
+              })}
 
-              <tr>
-                <table
-                  className="total"
-                  algin="right"
-                  border="0"
-                  cellSpacing="0"
-                  cellPadding="10"
-                >
-                  <tr algin="right">
-                    <td>
-                      <h3>Total: &euro;{total}</h3>
-                    </td>
-                  </tr>
-                </table>
-              </tr>
-              <table
-                className="checkoutButtons"
-                border="0"
-                cellSpacing="0"
-                cellPadding="10"
-              >
-                <tr>
-                  <td>
-                    <Button onClick={() => navigate(-1)}>
-                      Continue Shopping
-                    </Button>
-                  </td>
+              <h3 className="total-price">Total: &euro;{total}</h3>
+              <div className="cart-buttons">
+                <Button onClick={() => navigate(-1)}>Continue Shopping</Button>
 
-                  <td>
-                    <Button>Checkout</Button>
-                  </td>
-                </tr>
-              </table>
-              <tr></tr>
-            </tbody>
-          </table>
+                <Button>Checkout</Button>
+              </div>
+            </div>
+          </>
         ) : (
-          <p>{errMsg}</p>
+          <p className="no-items-msg">{errMsg}</p>
         )}
       </div>
     </div>

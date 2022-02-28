@@ -28,11 +28,11 @@
     }
   }
   .details {
-    padding: 2rem;
+    padding: 2rem 0;
 
     .product-name {
       font-size: 2rem;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
     a {
       color: #444;
@@ -44,7 +44,7 @@
       line-height: 1.2;
       font-size: 1.6rem;
       letter-spacing: 0.8px;
-      margin-bottom: 10px;
+      margin-bottom: 1rem;
     }
     .product-price {
       font-size: 2.2rem;
@@ -55,12 +55,14 @@
     margin-top: 2rem;
 
     Button {
-      color: #fff;
-      background-color: #444;
+      color: #444;
+      background-color: #fff;
+      border: 1px solid #444;
+      transition: all 0.4s ease-in-out;
+
       &:hover {
-        color: #444;
-        background-color: #fff;
-        border: 1px solid #444;
+        color: #fff;
+        background-color: #444;
         transition: all 0.4s ease-in-out;
       }
     }
@@ -131,7 +133,7 @@
 @media screen and (max-width: 440px) {
   .products {
     .banner-image {
-      background-size: contain;
+      background-size: cover;
       height: 20rem;
       margin-bottom: 0;
       background-repeat: no-repeat;

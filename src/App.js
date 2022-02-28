@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-
 import { checkUserSession } from './redux/user/user.action';
 import { useDispatch } from 'react-redux';
 
@@ -18,7 +17,7 @@ import Homepage from './pages/Homepage/Homepage';
 import Search from './pages/Search/Search';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Cart from './pages/Cart/Cart';
-import Registration from './pages/Registration/Registration';
+import OurWorld from './pages/OurWorld/OurWorld';
 import Account from './pages/Account/Account';
 import Recovery from './pages/Recovery/Recovery';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -105,10 +104,10 @@ const App = (props) => {
           }
         />
         <Route
-          path="/registration"
+          path="/ourworld"
           element={
             <MainLayout>
-              <Registration />
+              <OurWorld />
             </MainLayout>
           }
         />

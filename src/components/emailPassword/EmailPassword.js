@@ -5,14 +5,11 @@ import {
   resetPasswordStart,
   resetUserState,
 } from '../../redux/user/user.action';
-// import { WithRouter } from '../withRouter/WithRouter';
 import './style.scss';
 
 import AuthWrapper from '../authWrapper/AuthWrapper';
 import FormInput from '../forms/form_input/FormInput';
 import Button from '../forms/Button/Button';
-
-// import { auth } from '../../firebase/utils';
 
 const mapState = ({ user }) => ({
   resetPasswordSuccess: user.resetPasswordSuccess,
@@ -72,5 +69,4 @@ const EmailPassword = (props) => {
   );
 };
 
-// export default WithRouter(EmailPassword);
 export default EmailPassword;

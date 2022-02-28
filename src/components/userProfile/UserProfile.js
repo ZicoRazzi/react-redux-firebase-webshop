@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.scss';
-import userIMG from './../../assets/images/user.png';
+import userIMG from './../../assets/images/usercat.png';
 
 const UserProfile = (props) => {
   const { currentUser } = props;
@@ -10,7 +10,7 @@ const UserProfile = (props) => {
     <div className="userProfile">
       <ul>
         <li>
-          <div className="img">
+          <div className="user-img">
             <img src={userIMG} />
           </div>
         </li>

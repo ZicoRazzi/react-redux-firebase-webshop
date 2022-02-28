@@ -15,13 +15,16 @@
       display: block;
       width: 100%;
 
-      .img {
+      .user-img {
         display: block;
-        width: 7rem;
+        width: 20rem;
+        height: 20rem;
+
         margin: 0 auto;
 
         img {
           display: block;
+          border-radius: 50%;
           width: 100%;
         }
       }

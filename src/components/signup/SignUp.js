@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// import { WithRouter } from './../withRouter/WithRouter';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUpUserStart } from '../../redux/user/user.action';
 import FormInput from '../forms/form_input/FormInput';
-import Button from '../forms/Button/Button';
 import AuthWrapper from '../authWrapper/AuthWrapper';
 import './style.scss';
 
@@ -99,12 +97,13 @@ const SignUp = (props) => {
             placeholder="Confirm Password"
             handleChange={(e) => setConfirmPassword(e.target.value)}
           />
-          <Button type="submit">Register</Button>
+          <button type="submit" className="register-btn">
+            Register
+          </button>
         </form>
       </div>
     </AuthWrapper>
   );
 };
 
-// export default WithRouter(SignUp);
 export default SignUp;

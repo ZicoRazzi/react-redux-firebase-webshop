@@ -1,4 +1,29 @@
 .account {
-  height: 100vh;
-  margin-top: 250px;
+  display: flex;
+  min-height: 700px;
+
+  .registration-container,
+  .login-container {
+    width: 50%;
+    background: no-repeat;
+    background-size: contain;
+    margin: -1px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .account {
+    padding-top: 5rem;
+    flex-direction: column;
+    .registration-container,
+    .login-container {
+      width: 100%;
+      background: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+@media screen and (max-width: 767px) {
+  .account {
+    padding-top: 8rem;
+  }
 }

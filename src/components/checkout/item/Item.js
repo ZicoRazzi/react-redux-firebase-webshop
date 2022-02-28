@@ -1,11 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { handleReduceCartItem } from '../../../redux/cart/cart.utils';
 import {
   removeCartItem,
   addProduct,
   reduceCartItem,
 } from './../../../redux/cart/cart.action';
+import {
+  TiDeleteOutline,
+  TiChevronLeftOutline,
+  TiChevronRightOutline,
+} from 'react-icons/ti';
 
 const Item = (product) => {
   const dispatch = useDispatch();
@@ -28,36 +32,34 @@ const Item = (product) => {
     dispatch(reduceCartItem(product));
   };
   return (
-    <table className="cartItem" border="0" cellSpacing="0" cellPadding="10">
-      <tbody>
-        <tr>
-          <td>
-            <img src={productThumbnail} alt={productName} />
-          </td>
-          <td>{productName}</td>
-          <td>
-            <span className="cartBtn" onClick={() => handleReduceItem(product)}>
-              {`< `}
-            </span>
-            <span>{quantity}</span>
-            <span className="cartBtn" onClick={() => handleAddProduct(product)}>
-              {` >`}
-            </span>
-          </td>
-          <td>
-            <span>&euro;{productPrice}</span>
-          </td>
-          <td algin="center">
-            <span
-              className="cartBtn"
-              onClick={() => handleRemoveCartItem(documentID)}
-            >
-              X
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div className="cartItem">
+      <div className="product-image">
+        <img src={productThumbnail} alt={productName} />
+      </div>
+      <div className="product-name">
+        <span>{productName}</span>
+      </div>
+      <div className="quantities">
+        <span className="cartBtn" onClick={() => handleReduceItem(product)}>
+          <TiChevronLeftOutline />
+        </span>
+        <span className="product-quantity">{quantity}</span>
+        <span className="cartBtn" onClick={() => handleAddProduct(product)}>
+          <TiChevronRightOutline />
+        </span>
+      </div>
+      <div className="product-price">
+        <span>&euro;{productPrice}</span>
+      </div>
+      <div className="delete-button">
+        <span
+          className="cartBtn"
+          onClick={() => handleRemoveCartItem(documentID)}
+        >
+          <TiDeleteOutline />
+        </span>
+      </div>
+    </div>
   );
 };
 

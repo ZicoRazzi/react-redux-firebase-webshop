@@ -1,0 +1,252 @@
+[debug] [2022-02-25T21:51:52.544Z] ----------------------------------------------------------------------
+[debug] [2022-02-25T21:51:52.546Z] Command:       /usr/local/bin/node /usr/local/bin/firebase functions:shell
+[debug] [2022-02-25T21:51:52.547Z] CLI Version:   10.2.1
+[debug] [2022-02-25T21:51:52.547Z] Platform:      darwin
+[debug] [2022-02-25T21:51:52.547Z] Node Version:  v14.15.4
+[debug] [2022-02-25T21:51:52.548Z] Time:          Fri Feb 25 2022 22:51:52 GMT+0100 (Midden-Europese standaardtijd)
+[debug] [2022-02-25T21:51:52.548Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-02-25T21:51:52.610Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-02-25T21:51:52.611Z] > authorizing via signed-in user (zicorazzi@gmail.com)
+[debug] [2022-02-25T21:51:52.611Z] [iam] checking project ecommerce-website-8c60a for permissions ["firebase.projects.get"]
+[debug] [2022-02-25T21:51:52.612Z] > refreshing access token with scopes: []
+[debug] [2022-02-25T21:51:52.613Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-02-25T21:51:52.751Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Fri, 25 Feb 2022 21:51:52 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-02-25T21:51:52.786Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-website-8c60a:testIamPermissions [none]
+[debug] [2022-02-25T21:51:52.786Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-website-8c60a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-02-25T21:51:53.492Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-website-8c60a:testIamPermissions 200
+[debug] [2022-02-25T21:51:53.492Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ecommerce-website-8c60a:testIamPermissions {"permissions":["firebase.projects.get"]}
+[warn] ⚠  Your requested "node" version "16" doesn't match your global version "14". Using node@14 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Your requested \"node\" version \"16\" doesn't match your global version \"14\". Using node@14 from host."}}
+[debug] [2022-02-25T21:51:53.516Z] defaultcredentials: writing to file /Users/zico/.config/firebase/zicorazzi_gmail_com_application_default_credentials.json
+[debug] [2022-02-25T21:51:53.517Z] DEBUG: Setting GAC to /Users/zico/.config/firebase/zicorazzi_gmail_com_application_default_credentials.json
+[debug] [2022-02-25T21:51:53.518Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-website-8c60a/adminSdkConfig [none]
+[debug] [2022-02-25T21:51:53.823Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-website-8c60a/adminSdkConfig 200
+[debug] [2022-02-25T21:51:53.823Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ecommerce-website-8c60a/adminSdkConfig {"projectId":"ecommerce-website-8c60a","storageBucket":"ecommerce-website-8c60a.appspot.com","locationId":"europe-west"}
+[debug] [2022-02-25T21:51:53.842Z] [functions] Watching "/Users/zico/Documents/react-redux-firebase-webshop/functions" for Cloud Functions...
+[debug] [2022-02-25T21:51:53.848Z] Validating nodejs source
+[debug] [2022-02-25T21:51:55.641Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-02-25T21:51:55.642Z] Building nodejs source
+[debug] [2022-02-25T21:51:55.642Z] Analyzing nodejs backend spec
+[debug] [2022-02-25T21:51:55.888Z] [functions[us-central1-api]] http function initialized (http://localhost:5000/ecommerce-website-8c60a/us-central1/api).
+[info] i  functions: Loaded functions: api 
+[warn] ⚠  functions: The following emulators are not running, calls to these services will affect production: firestore, database, pubsub, storage 
+[debug] [2022-02-25T21:53:29.955Z] DEBUG: File /Users/zico/Documents/react-redux-firebase-webshop/functions/index.js changed, reloading triggers
+[debug] [2022-02-25T21:53:30.961Z] Validating nodejs source
+[debug] [2022-02-25T21:53:32.968Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-02-25T21:53:32.969Z] Building nodejs source
+[debug] [2022-02-25T21:53:32.969Z] Analyzing nodejs backend spec
+[debug] [2022-02-25T21:58:48.996Z] DEBUG: File /Users/zico/Documents/react-redux-firebase-webshop/functions/index.js changed, reloading triggers
+[debug] [2022-02-25T21:58:49.999Z] Validating nodejs source
+[debug] [2022-02-25T21:58:52.202Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-02-25T21:58:52.203Z] Building nodejs source
+[debug] [2022-02-25T21:58:52.203Z] Analyzing nodejs backend spec
+[debug] [2022-02-25T22:01:43.614Z] DEBUG: File /Users/zico/Documents/react-redux-firebase-webshop/functions/index.js changed, reloading triggers
+[debug] [2022-02-25T22:01:44.618Z] Validating nodejs source
+[debug] [2022-02-25T22:01:46.512Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-02-25T22:01:46.513Z] Building nodejs source
+[debug] [2022-02-25T22:01:46.513Z] Analyzing nodejs backend spec
+[debug] [2022-02-25T22:05:05.507Z] DEBUG: File /Users/zico/Documents/react-redux-firebase-webshop/functions/index.js changed, reloading triggers
+[debug] [2022-02-25T22:05:06.510Z] Validating nodejs source
+[debug] [2022-02-25T22:05:08.292Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.6.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-02-25T22:05:08.293Z] Building nodejs source
+[debug] [2022-02-25T22:05:08.293Z] Analyzing nodejs backend spec
+[debug] [2022-02-25T22:06:14.930Z] DEBUG: File /Users/zico/Documents/react-redux-firebase-webshop/functions/package.json changed, reloading triggers
+[debug] [2022-02-25T22:06:15.937Z] Validating nodejs source
+[debug] [2022-02-25T22:06:17.830Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.1",
+    "stripe": "^8.124.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-02-25T22:06:17.831Z] Building nodejs source
+[debug] [2022-02-25T22:06:17.831Z] Analyzing nodejs backend spec
+[debug] [2022-02-28T09:12:28.693Z] DEBUG: File /Users/zico/Documents/react-redux-firebase-webshop/functions/index.js changed, reloading triggers
+[debug] [2022-02-28T09:12:29.722Z] Validating nodejs source
+[debug] [2022-02-28T09:12:31.980Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.10.0",
+    "firebase-functions": "^3.6.1",
+    "stripe": "^8.124.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-02-28T09:12:31.981Z] Building nodejs source
+[debug] [2022-02-28T09:12:31.981Z] Analyzing nodejs backend spec

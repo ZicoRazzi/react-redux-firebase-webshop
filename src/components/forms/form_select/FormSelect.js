@@ -24,7 +24,7 @@ const FormSelect = ({
           const { value, name } = option;
 
           return (
-            <option key={index} value={value}>
+            <option className="option" key={index} value={value}>
               {name}
             </option>
           );

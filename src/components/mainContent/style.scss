@@ -1,4 +1,4 @@
-.main_image {
+.main-image {
   margin-top: 20rem;
   width: 100%;
   height: 700px;
@@ -10,7 +10,7 @@
   display: flex;
   width: 100%;
   min-height: 500px;
-  .link_image {
+  .link-image {
     width: 33.33%;
     min-height: 100%;
     background: no-repeat center center;
@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
   }
-  .link_products {
+  .link-products {
     background-color: transparent;
     color: #fff;
     text-transform: uppercase;
@@ -33,7 +33,7 @@
   }
 }
 @media screen and (max-width: 767px) {
-  .main_image {
+  .main-image {
     margin-top: 10rem;
     max-width: 750px;
     height: 380px;
@@ -41,7 +41,7 @@
   .link-banner-container {
     margin: 1rem auto 3rem;
     min-height: 250px;
-    .link_image {
+    .link-image {
       width: 33.33%;
       height: 250px;
     }
@@ -49,13 +49,13 @@
 }
 
 @media screen and (max-width: 440px) {
-  .main_image {
+  .main-image {
     display: none;
   }
   .link-banner-container {
     flex-direction: column;
     margin-top: 7rem;
-    .link_image {
+    .link-image {
       width: 100%;
       height: 500px;
     }
