@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-redux-firebase-webshop/static/css/main.2f1dff5e.css",
+    "main.css": "/react-redux-firebase-webshop/static/css/main.cb5d3011.css",
     "main.js": "/react-redux-firebase-webshop/static/js/main.b2be7d25.js",
     "static/media/gloves_3.jpg": "/react-redux-firebase-webshop/static/media/gloves_3.0385542cdb5d862feca7.jpg",
     "static/media/usercat.png": "/react-redux-firebase-webshop/static/media/usercat.d5b3707149475020ff91.png",
@@ -16,11 +16,11 @@
     "static/media/beanies.jpg": "/react-redux-firebase-webshop/static/media/beanies.d6a86ed9c82e84518140.jpg",
     "static/media/account-bg.jpg": "/react-redux-firebase-webshop/static/media/account-bg.ee5252c844b7bc3f7345.jpg",
     "index.html": "/react-redux-firebase-webshop/index.html",
-    "main.2f1dff5e.css.map": "/react-redux-firebase-webshop/static/css/main.2f1dff5e.css.map",
+    "main.cb5d3011.css.map": "/react-redux-firebase-webshop/static/css/main.cb5d3011.css.map",
     "main.b2be7d25.js.map": "/react-redux-firebase-webshop/static/js/main.b2be7d25.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f1dff5e.css",
+    "static/css/main.cb5d3011.css",
     "static/js/main.b2be7d25.js"
   ]
 }
