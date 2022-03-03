@@ -18,8 +18,7 @@
   .process-image {
     background: no-repeat;
   }
-  .story-text,
-  .process-text {
+  .story-text {
     text-align: center;
     padding: 12rem 5rem;
     h1 {
@@ -31,9 +30,22 @@
       letter-spacing: 1.1px;
     }
   }
+  .process-text {
+    text-align: center;
+    padding: 2rem 5rem 10rem;
+    h1 {
+      margin: 3rem auto;
+    }
+    p {
+      margin: 3rem auto 1rem;
+      line-height: 1.4;
+      letter-spacing: 1.1px;
+      font-size: 1.6rem;
+    }
+  }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 800px) {
   .about {
     .campaign-image,
     .story-text,
@@ -67,7 +79,7 @@
     }
   }
 }
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 540px) {
   .about {
     .story-content,
     .process-content {

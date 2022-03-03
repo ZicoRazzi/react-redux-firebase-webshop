@@ -1,4 +1,4 @@
-.nav_menu {
+.nav-menu {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -40,10 +40,10 @@
     font-size: 2.4rem;
     margin-top: 3rem;
   }
-  .nav_menu {
+  .nav-menu {
     display: none;
   }
-  .nav_menu-mobile {
+  .nav-menu-mobile {
     display: block;
     position: absolute;
     width: 100%;
@@ -54,7 +54,7 @@
     transition: all 0.8s ease-out;
     padding: 10px;
   }
-  .nav_menu {
+  .nav-menu {
     &-list {
       display: block;
       margin: 2rem;
@@ -71,7 +71,7 @@
     top: 3.4rem;
     font-size: 2rem;
   }
-  .nav_menu {
+  .nav-menu {
     &-list {
       margin: 1.6rem;
     }

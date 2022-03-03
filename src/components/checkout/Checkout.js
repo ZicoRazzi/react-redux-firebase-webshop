@@ -28,16 +28,6 @@ const Checkout = ({}) => {
       <div className="cart">
         {cartItems.length > 0 ? (
           <>
-            {/* <div className="checkoutItems">
-              <ul>
-                <li>Product</li>
-                <li>Description</li>
-                <li>Quantity</li>
-                <li>Price</li>
-                <li>Remove</li>
-              </ul>
-            </div> */}
-
             <div className="items">
               {cartItems.map((item, pos) => {
                 return (

@@ -15,16 +15,17 @@
 }
 .mainLayout {
   max-width: 100%;
-  margin-top: 20rem;
+  margin-top: 200px;
 }
+
 @media screen and (max-width: 767px) {
   .mainLayout {
-    margin-top: 5rem;
+    margin-top: 0;
   }
 }
 
 @media screen and (max-width: 440px) {
   .mainLayout {
-    margin-top: 0;
+    margin-top: 2rem;
   }
 }

@@ -10,6 +10,10 @@
   margin: 1.5rem auto 0;
   a {
     color: #fff;
+    text-decoration: underline;
+    &:hover {
+      color: rgba(0, 0, 0, 0.7);
+    }
   }
 }
 

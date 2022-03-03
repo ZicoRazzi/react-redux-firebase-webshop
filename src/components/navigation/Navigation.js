@@ -26,86 +26,81 @@ const Navigation = (props) => {
 
   return (
     <>
-      <div className={isMobile ? 'nav_menu-mobile' : 'nav_menu'}>
+      <div className={isMobile ? 'nav-menu-mobile' : 'nav-menu'}>
         <ul onClick={() => setIsMobile(false)}>
           {currentUser && [
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/beanies">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/beanies">
                 Beanies
               </Link>
             </li>,
 
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/gloves">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/gloves">
                 Gloves
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/scarves">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/scarves">
                 Scarves
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/ourworld">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/ourworld">
                 Our World
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/search">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/search">
                 Search
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/dashboard">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/dashboard">
                 My account
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/cart">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/cart">
                 Cart ({totalNumCartItems})
               </Link>
             </li>,
 
-            <li className="nav_menu-list">
-              <span className="nav_menu-link" onClick={() => signOut()}>
+            <li className="nav-menu-list">
+              <span className="nav-menu-link" onClick={() => signOut()}>
                 LogOut
               </span>
             </li>,
           ]}
           {!currentUser && [
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/beanies">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/beanies">
                 Beanies
               </Link>
             </li>,
 
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/gloves">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/gloves">
                 Gloves
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/scarves">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/scarves">
                 Scarves
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/ourworld">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/ourworld">
                 Our World
               </Link>
             </li>,
-            // <li className="nav_menu-list">
-            //   <Link className="nav_menu-link" to="/registration">
-            //     Registration
-            //   </Link>
-            // </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/account">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/account">
                 Account
               </Link>
             </li>,
-            <li className="nav_menu-list">
-              <Link className="nav_menu-link" to="/cart">
+            <li className="nav-menu-list">
+              <Link className="nav-menu-link" to="/cart">
                 Cart ({totalNumCartItems})
               </Link>
             </li>,
