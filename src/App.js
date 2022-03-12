@@ -8,6 +8,7 @@ import './default.scss';
 //components
 import AdminToolbar from './components/adminToolbar/AdminToolbar';
 import ProductResults from './components/productResults/ProductResults';
+import ScrollToTop from './components/scrollToTop/ScrollToTop';
 //hoc
 import WithAuth from './hoc/WithAuth';
 import WithAdminAuth from './hoc/WithAdminAuth';
@@ -37,6 +38,8 @@ const App = (props) => {
 
   return (
     <div className="App">
+      <ScrollToTop />
+
       <Routes>
         <Route
           path="/"
